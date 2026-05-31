@@ -1,0 +1,42 @@
+{
+  "_comment": "Chat cleaning rules. Update this file to tune noise/tech/keyword detection without editing code.",
+
+  "tech_keywords": {
+    "models_frameworks": ["gpt", "claude", "codex", "copilot", "cursor", "gemini", "deepseek", "llama", "qwen", "chatglm", "kimi", "moonshot", "transformer", "diffusion", "llm", "vlm", "mcp", "agent", "rag", "embedding"],
+    "tools_platforms": ["openai", "anthropic", "notebooklm", "goal", "skill", "plugin", "github", "vercel", "docker", "modal", "vast", "openclaw", "wandb", "weflow", "playwright", "claude"],
+    "tech_terms": ["api", "sdk", "cli", "quota", "rate", "limit", "benchmark", "accuracy", "recall", "precision", "inference", "training", "epoch", "batch", "loss", "overfit", "converge", "latency", "throughput", "context", "hallucinat"],
+    "nature_skills": ["nature", "figure", "polish", "citation", "data", "writing", "reader", "response", "paper"],
+    "platforms": ["wechat", "weixin", "qq", "openim"]
+  },
+
+  "noise_patterns": [
+    { "pattern": "^哈{2,}$", "desc": "哈哈/哈哈哈..." },
+    { "pattern": "^6{2,}$", "desc": "666/6666..." },
+    { "pattern": "^[强旺柴666]{1,3}$", "desc": "single emoji chars" },
+    { "pattern": "^太强了$", "desc": "太强了" },
+    { "pattern": "^牛啊$", "desc": "牛啊" },
+    { "pattern": "^恐怖如斯$", "desc": "恐怖如斯" },
+    { "pattern": "^哎呦我去$", "desc": "哎呦我去" },
+    { "pattern": "^可以的$", "desc": "可以的" },
+    { "pattern": "^好的$", "desc": "好的" },
+    { "pattern": "^嗯$", "desc": "嗯" },
+    { "pattern": "^哦$", "desc": "哦" },
+    { "pattern": "^OK$", "desc": "OK" }
+  ],
+
+  "tech_anchors": [
+    "goal", "codex", "claude", "gpt", "skill", "nature",
+    "agent", "mcp", "api", "model", "quota", "proxy",
+    "openai", "deepseek", "gemini", "cursor", "copilot",
+    "token", "context", "benchmark", "training",
+    "fine.tun", "rl", "reward", "reasoning", "tool.use"
+  ],
+
+  "question_patterns": ["\\?", "？", "怎么", "如何", "有没有", "能不能", "可以吗", "行不行", "是不是", "会不会", "为什么", "哪位", "谁有", "求助", "请问"],
+
+  "msg_type_rules": {
+    "emoji_content": "[表情]",
+    "image_content": "[图片]",
+    "system_content": "[系统消息]"
+  }
+}

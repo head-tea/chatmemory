@@ -1,0 +1,17 @@
+# ChatMemory — Python dependencies
+# Install: pip install -r requirements.txt
+
+# NotebookLM CLI pipeline
+fpdf2>=2.7
+
+# PDF generation (pure Python, no native deps)
+
+# WeFlow HTTP API + link expansion
+# (stdlib only: urllib, json, hashlib, subprocess)
+
+# Optional: for EPUB extraction (qiaomu skill)
+# ebooklib>=0.18
+# beautifulsoup4>=4.12
+
+# Optional: for richer PDF rendering (needs GTK on Windows)
+# weasyprint>=60

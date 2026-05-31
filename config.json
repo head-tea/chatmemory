@@ -1,0 +1,51 @@
+{
+  "_comment": "ChatMemory unified config. Secrets via env vars: CHATMEMORY_WEFLOW_TOKEN, CHATMEMORY_NOTEBOOKLM_KEY",
+
+  "paths": {
+    "wechat_data": "E:/xwechat_files/wxid_bxzr26he6ea312_52c8",
+    "output_base": "E:/chatmemory",
+    "cache_dir": "E:/chatmemory/cache",
+    "exports_dir": "E:/chatmemory/exports/wechat"
+  },
+
+  "weflow": {
+    "api_base": "http://127.0.0.1:5031",
+    "exe_path": "E:/chatmemory/tool/WeFlow/WeFlow.exe",
+    "token": "env:CHATMEMORY_WEFLOW_TOKEN"
+  },
+
+  "decrypt": {
+    "tool_dir": "E:/chatmemory/tool/decrypt-wc",
+    "db_dir": "E:/xwechat_files/wxid_bxzr26he6ea312_52c8/db_storage",
+    "wechat_process": "Weixin.exe"
+  },
+
+  "cleaning": {
+    "rules_file": "E:/chatmemory/cleaning_rules.json",
+    "fragment_merge": {
+      "max_gap_seconds": 120,
+      "max_buffer_size": 3,
+      "max_content_length": 30
+    },
+    "qa_pairing": {
+      "max_followups": 5,
+      "max_gap_seconds": 600,
+      "quick_question_gap_seconds": 60
+    },
+    "topic_clustering": {
+      "window_minutes": 30
+    },
+    "link_expansion": {
+      "enabled": true,
+      "github_api": true,
+      "wechat_via_urlmd": true,
+      "max_concurrent": 3,
+      "cache_ttl_hours": 24
+    }
+  },
+
+  "output": {
+    "include_audit_samples": true,
+    "max_audit_samples": 20
+  }
+}

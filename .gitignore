@@ -1,0 +1,20 @@
+# ChatMemory v1.1
+cache/
+exports/
+*.link_cache.json
+tool/
+__pycache__/
+*.pyc
+*.pyo
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+*.token
+
+# Large binaries — uploaded as GitHub Release assets, not committed
+deps/WeFlow-*-Setup.exe
