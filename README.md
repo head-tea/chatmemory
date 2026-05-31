@@ -107,7 +107,7 @@ Claude Code 会自动：克隆仓库 → 运行初始化脚本 → 安装依赖 
 **中文**:
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/xxx/chatmemory.git
+git clone https://github.com/head-tea/chatmemory.git
 cd chatmemory
 
 # 2. 一键初始化（创建目录 + 配置）
@@ -133,7 +133,7 @@ python setup.py check
 
 **English**:
 ```bash
-git clone https://github.com/xxx/chatmemory.git
+git clone https://github.com/head-tea/chatmemory.git
 cd chatmemory
 python setup.py init
 pip install -r requirements.txt
@@ -281,11 +281,11 @@ chatmemory/
 ## ⭐ 项目星标 / Star History
 
 <p align="center">
-  <a href="https://star-history.com/#xxx/chatmemory&Date">
-    <img src="https://api.star-history.com/svg?repos=xxx/chatmemory&type=Date" alt="Star History Chart" width="600">
+  <a href="https://star-history.com/#head-tea/chatmemory&Date">
+    <img src="https://api.star-history.com/svg?repos=head-tea/chatmemory&type=Date" alt="Star History Chart" width="600">
   </a>
 </p>
-<p align="center"><em>▲ 替换 xxx/chatmemory 为实际仓库路径后即可显示 / Replace with actual repo path</em></p>
+<p align="center"><em>▲ 替换 head-tea/chatmemory 为实际仓库路径后即可显示 / Replace with actual repo path</em></p>
 
 ---
 
