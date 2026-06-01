@@ -16,6 +16,7 @@
 
 <p align="center">
   <a href="#-快速开始-quick-start">快速开始</a> •
+  <a href="TUTORIAL.md">📖 新手教程</a> •
   <a href="#-产出成果-what-it-produces">产出成果</a> •
   <a href="#-管道架构-pipeline">管道架构</a> •
   <a href="#-清洗策略-cleaning-strategy">清洗策略</a> •
