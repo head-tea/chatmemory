@@ -56,9 +56,10 @@ WeFlow 是本项目的核心依赖——它读取微信本地数据库并通过 
 
 1. 从 [GitHub Releases](https://github.com/head-tea/chatmemory/releases) 下载 `WeFlow-4.5.1-x64-Setup.exe`
 2. 双击安装，安装目录选 `E:\chatmemory\tool\WeFlow\`
-3. 安装完成后打开 WeFlow，扫码登录微信
-4. 进入 **设置 → HTTP API**，开启 API 服务
-5. 复制显示的 API Token
+3. 安装完成后打开 WeFlow，**跟随软件内置的新手引导教程完成初始化配置**
+4. 扫码登录微信（注意：仅支持微信 **4.1.10 及以下**版本）
+5. 完成配置后，手动进入 **设置 → 开启 HTTP 调用功能**
+6. 复制显示的 API Token
 
 ### 1.5 配置 Token / Set Token
 

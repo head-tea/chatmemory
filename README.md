@@ -76,12 +76,27 @@
 | 组件 / Component | 状态 / Status | 备注 / Notes |
 |------------------|---------------|--------------|
 | **操作系统** / OS | Windows 专用 | WeFlow 是 Windows 原生应用 (Electron + 微信) |
-| **Claude Code** | ✅ 主要支持 | 首选开发与运行环境 |
-| **其他智能体** / Other Agents | 🔬 实验性 | 理论上兼容 Codex、Aider 等 |
-| **微信版本** / WeChat | 3.9+ | 已在 3.9.x 上测试 |
+| **Claude Code** | ✅ 主要支持 | 推荐 v1.0.37 版本，最新版对 DeepSeek 等模型兼容性较差 |
+| **Codex** | 🔶 部分支持 | 基础导出/清洗可用，核心深层分析功能依赖 Claude Code + NotebookLM |
+| **微信版本** / WeChat | ≤ 4.1.10 | 目前仅支持 4.1.10 及以下版本 |
 | **Python** | 3.7+ | 已在 Python 3.13 上测试 |
 
-### NotebookLM 注意事项 / NotebookLM Notes
+### Claude Code 版本建议 / Version Recommendation
+
+**中文**: 最新版本的 Claude Code 对 DeepSeek 等第三方模型的兼容性较差。建议使用 **v1.0.37** 版本以获得最佳体验：
+
+```bash
+# 安装指定版本的 Claude Code CLI
+npm install -g @anthropic-ai/claude-code@1.0.37
+```
+
+**English**: The latest Claude Code has poor compatibility with third-party models like DeepSeek. We recommend **v1.0.37** for the best experience.
+
+### 推荐：直接使用 Claude Code 本地适配 / Native Claude Code Setup
+
+**中文**: 我们强烈推荐直接在 Claude Code 中运行本项目——Claude Code 会自动加载 `SKILL.md` 和 `Claude.md` 中的配置，无需手动设置路径。
+
+**English**: We strongly recommend running this project directly within Claude Code — it auto-loads configurations from `SKILL.md` and `Claude.md` without manual path setup.
 
 **中文**: NotebookLM 对访问 IP 有较严格的要求——某些地区的 IP 可能无法正常使用。建议使用与 Google 账号注册地一致的网络环境。
 
