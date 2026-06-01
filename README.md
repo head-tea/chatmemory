@@ -297,9 +297,10 @@ chatmemory/
 ## ⭐ 项目星标 / Star History
 
 <p align="center">
-  <a href="https://star-history.com/#head-tea/chatmemory&Date">
-    <img src="https://api.star-history.com/svg?repos=head-tea/chatmemory&type=Date" alt="Star History Chart" width="600">
-  </a>
+    <a href="https://star-history.com/#head-tea/chatmemory&Date">
+        <img src="https://api.star-history.com/svg?repos=head-tea/chatmemory&type=Date"
+             alt="Star History Chart" width="600">
+    </a>
 </p>
 <p align="center"><em>▲ 替换 head-tea/chatmemory 为实际仓库路径后即可显示 / Replace with actual repo path</em></p>
 
