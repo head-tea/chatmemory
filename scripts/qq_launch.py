@@ -14,7 +14,7 @@ import urllib.error
 import os
 import sys
 
-from config_loader import QCE_DIR, QCE_QCE_LAUNCHER, ONEBOT_API
+from config_loader import QCE_DIR, QCE_LAUNCHER, ONEBOT_API
 
 ONEBOT_API = ONEBOT_API.rstrip("/")
 HEALTH_ENDPOINT = f"{ONEBOT_API}/get_login_info"
@@ -31,15 +31,6 @@ def is_api_ready():
         )
         with urllib.request.urlopen(req, timeout=3) as resp:
             return resp.status == 200
-    except Exception:
-        return False
-
-
-def is_qce_running():
-    """Check if QCE web UI is already up on port 40653."""
-    try:
-        urllib.request.urlopen("http://127.0.0.1:40653/health", timeout=3)
-        return True
     except Exception:
         return False
 
@@ -62,7 +53,7 @@ def launch():
     print(f"[QQ] Starting QCE: {QCE_LAUNCHER} ...")
     try:
         subprocess.Popen(
-            [QCE_LAUNCHER],
+            QCE_LAUNCHER,       # string form for shell=True (Windows .bat)
             shell=True,
             cwd=QCE_DIR,
             stdout=subprocess.DEVNULL,

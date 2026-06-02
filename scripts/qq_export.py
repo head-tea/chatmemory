@@ -158,7 +158,8 @@ def _segments_to_text(message_segments):
         elif t == 'image':
             parts.append('[图片]')
         elif t == 'reply':
-            parts.append('[回复]')
+            mid = d.get('message_id', '')
+            parts.append(f'[回复 id={mid}]')
         elif t == 'file':
             parts.append(f"[文件: {d.get('name', '?')}]")
         else:
