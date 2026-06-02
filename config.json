@@ -14,6 +14,12 @@
     "token": "env:CHATMEMORY_WEFLOW_TOKEN"
   },
 
+  "onebot": {
+    "api_base": "http://127.0.0.1:3001",
+    "qce_dir": "E:/chatmemory/tool/QCE/NapCat-QCE-Windows-x64",
+    "launcher": "E:/chatmemory/tool/QCE/NapCat-QCE-Windows-x64/launcher-user.bat"
+  },
+
   "decrypt": {
     "tool_dir": "E:/chatmemory/tool/decrypt-wc",
     "db_dir": "E:/xwechat_files/wxid_bxzr26he6ea312_52c8/db_storage",

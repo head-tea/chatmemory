@@ -5,6 +5,7 @@ import re, sys
 import logging
 from config_loader import (
     WEFLOW_EXE, WEFLOW_API, WEFLOW_TOKEN,
+    ONEBOT_API, QCE_DIR, QCE_LAUNCHER,
     PROJECT_ROOT, CACHE_DIR, RAW_EXPORT_DIR, CLEANED_DIR, NOTEBOOKLM_DIR,
     EXPORTS_DIR,
 )

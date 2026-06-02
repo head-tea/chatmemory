@@ -47,6 +47,12 @@ WEFLOW_EXE      = _cfg["weflow"]["exe_path"]
 WEFLOW_API      = _cfg["weflow"]["api_base"]
 WEFLOW_TOKEN    = _resolve_env(_cfg["weflow"]["token"])
 
+# ═══ OneBot (QQ via NapCatQQ) ═══════════════════════════════════════════════
+
+ONEBOT_API      = _cfg["onebot"]["api_base"]
+QCE_DIR         = _cfg["onebot"]["qce_dir"]
+QCE_LAUNCHER    = _cfg["onebot"]["launcher"]
+
 # ═══ Decrypt ═════════════════════════════════════════════════════════════════
 
 DECRYPT_TOOL_DIR = Path(_cfg["decrypt"]["tool_dir"])
