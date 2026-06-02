@@ -126,6 +126,22 @@ def cmd_init():
         print(f"    安装到: {weflow_exe.parent}")
         print(f"    安装后开启 HTTP API (设置 → HTTP API)")
 
+    # 6. Install sub-skills for Claude Code
+    print("[6/6] Installing Claude Code sub-skills...")
+    skills_dir = Path.home() / ".claude" / "skills"
+    sub_skills_src = Path(__file__).parent / "sub-skills"
+    if sub_skills_src.is_dir():
+        for sub in ["chatmemory-wechat", "chatmemory-qq"]:
+            src = sub_skills_src / sub / "SKILL.md"
+            dst_dir = skills_dir / sub
+            dst = dst_dir / "SKILL.md"
+            if src.exists():
+                dst_dir.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+                print(f"  OK  /{sub} ({dst})")
+    else:
+        print("  SKIP — sub-skills/ not found")
+
     print()
     print("Setup complete!")
     print()
@@ -134,10 +150,12 @@ def cmd_init():
     print("  2. 安装依赖: pip install -r requirements.txt")
     print("  3. 安装 notebooklm CLI: pip install notebooklm-py")
     print("  4. 登录 notebooklm: notebooklm login")
-    print("  5. 打开 WeFlow，登录微信")
+    print("  5. 打开 WeFlow / QCE，登录微信/QQ")
     print()
     print("然后就可以用了:")
-    print('  python scripts/wechat_export.py --all --days 1')
+    print("  微信: python scripts/wechat_export.py --all --days 1")
+    print("  QQ:   python scripts/qq_export.py --all --days 1")
+    print("  或在 Claude Code 中: /chatmemory-wechat   /chatmemory-qq")
 
 
 def cmd_check():
