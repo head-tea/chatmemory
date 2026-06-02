@@ -115,9 +115,9 @@ npm install -g @anthropic-ai/claude-code@1.0.37
 "帮我安装 ChatMemory 插件并完成初始化"
 ```
 
-Claude Code 会自动：克隆仓库 → 运行初始化脚本 → 安装依赖 → 指导 WeFlow 和 notebooklm 配置。
+Claude Code 会自动：克隆仓库 → 运行初始化脚本 → 安装依赖 → 指导 WeFlow (微信) / QCE (QQ) 和 notebooklm 配置。
 
-**English**: Simply tell Claude Code: `"Install the ChatMemory plugin and set it up for me."` It will clone, init, install deps, and guide you through WeFlow + notebooklm setup.
+**English**: Simply tell Claude Code: `"Install the ChatMemory plugin and set it up for me."` It will clone, init, install deps, and guide you through WeFlow (WeChat) / QCE (QQ) + notebooklm setup.
 
 ### 手动安装 / Manual Installation
 
@@ -134,11 +134,11 @@ python setup.py init
 pip install -r requirements.txt
 pip install notebooklm-py
 
-# 4. 安装 WeFlow
-# 从 GitHub Releases 下载 WeFlow-4.5.1-x64-Setup.exe
-# 安装到 E:\chatmemory\tool\WeFlow\
+# 4. 安装数据源（二选一或都装）
+# WeFlow (微信): 下载 WeFlow-4.5.1-x64-Setup.exe → 安装到 E:\chatmemory\tool\WeFlow\
+# QCE (QQ):    下载 NapCat-QCE-Windows-x64-v5.5.64.zip → 解压到 E:\chatmemory\tool\QCE\
 
-# 5. 设置环境变量
+# 5. 设置环境变量（WeFlow 需要，QCE 不需要）
 set CHATMEMORY_WEFLOW_TOKEN=你的WeFlow_API_Token
 
 # 6. notebooklm 认证
@@ -155,8 +155,9 @@ cd chatmemory
 python setup.py init
 pip install -r requirements.txt
 pip install notebooklm-py
-# Download WeFlow from GitHub Releases → install to E:\chatmemory\tool\WeFlow\
-set CHATMEMORY_WEFLOW_TOKEN=your_token
+# WeFlow (WeChat): Download WeFlow-4.5.1-x64-Setup.exe → install to E:\chatmemory\tool\WeFlow\
+# QCE (QQ):       Download NapCat-QCE zip → extract to E:\chatmemory\tool\QCE\
+set CHATMEMORY_WEFLOW_TOKEN=your_token   # WeFlow only
 notebooklm login
 python setup.py check
 ```
