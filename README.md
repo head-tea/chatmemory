@@ -9,9 +9,9 @@
 # ChatMemory v1.1
 
 <p align="center">
-  <strong>微信聊天记录 → 清洗 → NotebookLM 深度分析</strong><br>
-  <em>WeChat Chat Record → Clean → AI Intelligence Extraction</em><br>
-  <em>Built on WeFlow + Claude Code · Academic Research Tool</em>
+  <strong>微信/QQ 聊天记录 → 清洗 → NotebookLM 深度分析</strong><br>
+  <em>WeChat / QQ Chat Record → Clean → AI Intelligence Extraction</em><br>
+  <em>Built on WeFlow + QQChatExporter + Claude Code · Academic Research Tool</em>
 </p>
 
 <p align="center">
@@ -79,7 +79,7 @@
 | **Claude Code** | ✅ 主要支持 | 推荐 v1.0.37 版本，最新版对 DeepSeek 等模型兼容性较差 |
 | **Codex** | 🔶 部分支持 | 基础导出/清洗可用，核心深层分析功能依赖 Claude Code + NotebookLM |
 | **微信版本** / WeChat | ≤ 4.1.10 | 目前仅支持 4.1.10 及以下版本 |
-| **QQ 版本** / QQ | QQ NT 9.9+ | 通过 NapCatQQ (OneBot) 协议，首次扫码后自动登录 |
+| **QQ 版本** / QQ | QQ NT 9.9 | 通过 NapCatQQ (OneBot) 协议，首次扫码后自动登录 |
 | **Python** | 3.7+ | 已在 Python 3.13 上测试 |
 
 ### Claude Code 版本建议 / Version Recommendation
@@ -167,10 +167,10 @@ python setup.py check
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              WeFlow HTTP API (127.0.0.1:5031)            │
-│              微信桌面端 → 聊天数据源                      │
-└────────────────────┬────────────────────────────────────┘
-                     │  原始 TXT 导出 / Raw TXT export
+│    WeFlow HTTP API (127.0.0.1:5031)    │  OneBot API (:3001)   │
+│    微信桌面端 → 聊天数据源              │  QQ NT → 聊天数据源    │
+└────────────────────┬───────────────────┴──────────────────────┘
+                     │  原始 TXT 导出 / Raw TXT export (统一格式)
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │            6 阶段清洗管道 / 6-Stage Cleaning              │
@@ -311,7 +311,8 @@ chatmemory/
 
 ## 🙏 致谢 / Acknowledgements
 
-- **[WeFlow](https://weflow.app)** — 感谢 WeFlow 团队提供的卓越微信 HTTP API 基础设施，本项目得以在其基础上构建 / for the excellent WeChat HTTP API infrastructure
+- **[WeFlow](https://weflow.app)** — 感谢 WeFlow 团队提供的卓越微信 HTTP API 基础设施 / for the excellent WeChat HTTP API infrastructure
+- **[QQChatExporter](https://github.com/shuakami/qq-chat-exporter)** — 感谢 QCE 提供的 QQ 聊天记录导出能力和内置 NapCatQQ 集成 / for QQ chat export and built-in NapCatQQ
 - **LYQ** — 感谢慷慨的额度支持，使得大规模测试和验证成为可能 / for generous quota support enabling extensive testing
 - **[notebooklm-py](https://github.com/teng-lin/notebooklm-py)** — NotebookLM 自动化 CLI 工具
 - **[fpdf2](https://github.com/py-pdf/fpdf2)** — 纯 Python PDF 生成库

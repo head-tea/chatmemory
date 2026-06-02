@@ -1,7 +1,7 @@
 # ChatMemory 新手入门教程 / Beginner's Tutorial
 
-> 从零开始，手把手教你用 ChatMemory 把微信群聊变成 AI 情报报告  
-> From zero to hero: turn WeChat group chats into AI intelligence reports
+> 从零开始，手把手教你用 ChatMemory 把微信/QQ群聊变成 AI 情报报告  
+> From zero to hero: turn WeChat / QQ group chats into AI intelligence reports
 
 ---
 
@@ -14,7 +14,7 @@
 | Windows 系统 | — |
 | Python 3.7+ | `python --version` |
 | 微信桌面版 ≤ 4.1.10 | 打开微信 → 设置 → 关于 |
-| QQ NT 9.9+（如需 QQ 导出） | 打开 QQ → 设置 → 关于 |
+| QQ NT 9.9（如需 QQ 导出） | 打开 QQ → 设置 → 关于 |
 | GitHub 账号 | 用于 NotebookLM 同步 |
 | Google 账号 | 用于 NotebookLM 认证 |
 | 至少有一个微信群或QQ群 | 🤷 |
