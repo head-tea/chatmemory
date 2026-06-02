@@ -15,7 +15,7 @@
 - [x] **NotebookLM 集成** — 自动认证 + 上传 + 分析
 - [x] **项目文档** — Claude.md / skill.md / architecture.md / plan.md
 
-## 近期计划 (Phase 2 — QQ 支持)
+## Phase 2 — QQ 支持 (已完成)
 
 - [ ] **QQ 聊天导出** — `chatmemory-qq` 命令
 - [ ] **增量导出** — `--incremental` + watermark

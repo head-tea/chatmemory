@@ -155,6 +155,7 @@ def cmd_check():
         ("fpdf2 (pip)", lambda: _check_pip("fpdf2")),
         ("notebooklm CLI", lambda: _check_cmd("notebooklm", "--version")),
         ("url-md.exe", lambda: (PROJECT_ROOT / "tool" / "url-md.exe").exists()),
+        ("QCE (QQ)", lambda: (Path(r"E:\chatmemory\tool\QCE\NapCat-QCE-Windows-x64\launcher-user.bat")).exists()),
         ("WeFlow.exe", lambda: (PROJECT_ROOT / "tool" / "WeFlow" / "WeFlow.exe").exists()),
         ("CHATMEMORY_WEFLOW_TOKEN", lambda: bool(os.environ.get("CHATMEMORY_WEFLOW_TOKEN"))),
     ]

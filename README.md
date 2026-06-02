@@ -75,10 +75,11 @@
 
 | 组件 / Component | 状态 / Status | 备注 / Notes |
 |------------------|---------------|--------------|
-| **操作系统** / OS | Windows 专用 | WeFlow 是 Windows 原生应用 (Electron + 微信) |
+| **操作系统** / OS | Windows 专用 | WeFlow / QCE 均为 Windows 原生应用 |
 | **Claude Code** | ✅ 主要支持 | 推荐 v1.0.37 版本，最新版对 DeepSeek 等模型兼容性较差 |
 | **Codex** | 🔶 部分支持 | 基础导出/清洗可用，核心深层分析功能依赖 Claude Code + NotebookLM |
 | **微信版本** / WeChat | ≤ 4.1.10 | 目前仅支持 4.1.10 及以下版本 |
+| **QQ 版本** / QQ | QQ NT 9.9+ | 通过 NapCatQQ (OneBot) 协议，首次扫码后自动登录 |
 | **Python** | 3.7+ | 已在 Python 3.13 上测试 |
 
 ### Claude Code 版本建议 / Version Recommendation
@@ -269,8 +270,10 @@ chatmemory/
 └── scripts/
     ├── config_loader.py        ← 统一配置入口
     ├── utils.py                ← 共享工具
-    ├── wechat_launch.py        ← WeFlow 自动启动
-    ├── wechat_export.py        ← HTTP API 导出
+    ├── wechat_launch.py        ← WeFlow (微信) 自动启动
+    ├── wechat_export.py        ← 微信聊天记录导出
+    ├── qq_launch.py            ← QCE (QQ) 自动启动
+    ├── qq_export.py            ← QQ 聊天记录导出 (OneBot)
     ├── chat_cleaner.py         ← 6 阶段清洗管道
     ├── message_normalizer.py   ← 消息解析器（共享）
     ├── link_expander.py        ← URL 展开（SSRF 安全）

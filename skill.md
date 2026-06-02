@@ -10,7 +10,7 @@ description: >-
 
 # ChatMemory — 微信聊天记录自动化导出
 
-通过 WeFlow HTTP API 自动导出微信聊天记录，按时序 TXT 文件保存。
+通过 WeFlow HTTP API 自动导出微信/QQ聊天记录，按时序 TXT 文件保存。
 
 ## 工作流程
 
@@ -52,9 +52,9 @@ E:\chatmemory\wechat\
 
 ## 触发方式
 
-- "导出微信聊天记录"
-- "备份微信群聊"
-- "生成周报" / "分析群聊"
+- "导出微信/QQ聊天记录"
+- "备份微信/QQ群聊"
+- "生成周报/日报" / "分析群聊"
 - `/chatmemory-wechat` / `/chatmemory-notebooklm`
 
 ## 依赖
@@ -102,4 +102,4 @@ python scripts/chatmemory_notebooklm.py mind-map --group "群名"
 - `mindmaps/` — 思维导图 JSON
 - `manifest/` — 运行清单（支持幂等复用）
 
-**触发方式**: "生成周报" / "分析群聊" / "/chatmemory-notebooklm"
+**触发方式**: "生成周报/日报" / "分析群聊" / "/chatmemory-notebooklm"

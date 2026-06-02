@@ -300,7 +300,12 @@ ls E:\chatmemory\tool\WeFlow\WeFlow.exe
 ## 📖 完整命令速查 / Command Reference
 
 ```bash
-# === 导出 ===
+# === QQ导出 ===
+python scripts/qq_launch.py                                # 启动QCE
+python scripts/qq_export.py --all --days 1                 # 导出QQ最近1天
+python scripts/qq_export.py --contact "群名"              # 指定QQ群
+
+# === 微信导出 ===
 python scripts/wechat_export.py --all                    # 导出全部
 python scripts/wechat_export.py --all --days 7            # 导出最近7天
 python scripts/wechat_export.py --contact "群名"           # 指定群聊
