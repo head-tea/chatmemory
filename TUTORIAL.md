@@ -107,43 +107,50 @@ python setup.py check
 
 ## 第二步：第一次导出 / Step 2: First Export
 
-### 2.1 确保 WeFlow 正在运行
+### 2.1 微信导出 / WeChat Export
 
-WeFlow 需要保持打开状态，微信处于登录状态。
-
-### 2.2 导出聊天记录
+确保 WeFlow 正在运行，微信处于登录状态。
 
 ```bash
-# 导出所有群聊最近 1 天的消息（先用1天试试）
-python scripts/wechat_export.py --all --days 1
-
-# 导出指定群聊（名称模糊匹配）
-python scripts/wechat_export.py --contact "技术"
-
-# 精确匹配
+python scripts/wechat_export.py --all --days 1      # 导出全部最近1天
+python scripts/wechat_export.py --contact "技术"     # 模糊匹配群名
 python scripts/wechat_export.py --contact "Agent科研交流群" --exact
 ```
 
-**输出位置**：`E:\chatmemory\cache\raw_exports\{群名}\`
+### 2.2 QQ 导出 / QQ Export
+
+确保 QCE 正在运行，QQ 处于登录状态。
+
+```bash
+python scripts/qq_export.py --all --days 1           # 导出全部最近1天
+python scripts/qq_export.py --contact "机械臂"       # 模糊匹配群名
+python scripts/qq_export.py --contact "机械臂实验室" --exact
+```
+
+**输出位置**（微信/QQ 统一）：`E:\chatmemory\cache\raw_exports\{群名}\`
 
 ### 2.3 如果导出为 0 条消息
 
-这是常见问题——WeFlow API 需要指定日期范围。
+这是常见问题——WeFlow API 的 `start` 参数格式问题。
 
 ```bash
-# 减小天数范围
+# 微信: 减小天数范围或去掉天数限制
 python scripts/wechat_export.py --all --days 1
-
-# 或者不指定天数，导出全部
 python scripts/wechat_export.py --all
+
+# QQ: 一样
+python scripts/qq_export.py --all --days 1
+python scripts/qq_export.py --all
 ```
 
 ---
 
 ## 第三步：清洗数据 / Step 3: Clean
 
+微信和 QQ 导出的 TXT 格式完全一致，清洗管道无需修改：
+
 ```bash
-# 清洗指定群聊
+# 清洗指定群聊（微信/QQ通用）
 python scripts/chat_cleaner.py "E:\chatmemory\cache\raw_exports\群名\群名_时间.txt"
 
 # 指定输出目录
@@ -223,9 +230,10 @@ python scripts/daily_report.py \
   "E:\chatmemory\exports\wechat\群名\daily_report.pdf"
 ```
 
-或者通过 Claude Code 一键生成：
+或者通过 Claude Code 一键生成（微信/QQ通用）：
 ```
 "生成今天Agent群的日报"
+"导出QQ最近一周的聊天记录并生成周报"
 ```
 
 ---
