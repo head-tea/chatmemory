@@ -13,10 +13,11 @@
 |-------------------|------------------------|
 | Windows 系统 | — |
 | Python 3.7+ | `python --version` |
-| 微信桌面版 3.9+ | 打开微信 → 设置 → 关于 |
+| 微信桌面版 ≤ 4.1.10 | 打开微信 → 设置 → 关于 |
+| QQ NT 9.9+（如需 QQ 导出） | 打开 QQ → 设置 → 关于 |
 | GitHub 账号 | 用于 NotebookLM 同步 |
 | Google 账号 | 用于 NotebookLM 认证 |
-| 至少有一个微信群 | 🤷 |
+| 至少有一个微信群或QQ群 | 🤷 |
 
 ---
 
@@ -63,7 +64,20 @@ WeFlow 是本项目的核心依赖——它读取微信本地数据库并通过 
 
 > ⚠️ **注意**：WeFlow 在不同系统环境下的表现可能有所差异。如果在获取密钥界面暂时没有提取出密钥，请不要着急——尝试**重新启动 WeFlow 应用**或者**重启电脑**即可。这是正常的兼容性波动，切忌反复点击或重装。
 
-### 1.5 配置 Token / Set Token
+### 1.5 安装 QCE（QQ 导出）/ Install QCE for QQ
+
+QQ 导出通过 QCE（内置 NapCatQQ）实现——和 WeFlow 一样，解压即用，无需额外安装任何依赖。
+
+1. 从 [GitHub Releases](https://github.com/head-tea/chatmemory/releases) 下载 `NapCat-QCE-Windows-x64-v5.5.64.zip`
+2. 解压到 `E:\chatmemory\tool\QCE\NapCat-QCE-Windows-x64\`
+3. 双击 `launcher-user.bat` 启动
+4. 首次启动时控制台会出现二维码，用手机 QQ 扫码登录
+5. 后续启动自动恢复登录状态（与 WeFlow 的微信扫码一样，只需一次）
+6. OneBot HTTP API 自动在 `http://127.0.0.1:3001` 启动
+
+> ⚠️ **注意**：与 WeFlow 一样，QCE 在不同系统环境下的表现可能有所差异。如果首次扫码后界面卡住或未出现 API 端口，请重启 QCE 或重启电脑。切忌反复重装。
+
+### 1.6 配置 Token / Set Token
 
 ```bash
 # CMD
@@ -73,7 +87,7 @@ set CHATMEMORY_WEFLOW_TOKEN=你的Token
 $env:CHATMEMORY_WEFLOW_TOKEN="你的Token"
 ```
 
-### 1.6 认证 NotebookLM / Authenticate NotebookLM
+### 1.8 认证 NotebookLM / Authenticate NotebookLM
 
 ```bash
 notebooklm login
