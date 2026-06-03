@@ -5,15 +5,15 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        Claude Code                           │
-│  用户说 "导出微信聊天记录" → 触发 /chatmemory skill           │
+│  /chatmemory-wechat → 微信    /chatmemory-qq → QQ            │
 └──────────────┬──────────────────────────────────────────────┘
-               │ ① wechat_launch.py → 启动 WeFlow
-               │ ② wechat_export.py → HTTP API 导出
-               │ ③ chat_cleaner.py → 6 阶段清洗
+               │ ① launch.py → 启动数据源
+               │ ② export.py → API 拉取消息 → 统一 TXT 格式
+               │ ③ chat_cleaner.py → 6 阶段清洗 (微信/QQ通用)
                │ ④ chatmemory_notebooklm.py → NotebookLM 分析
                ▼
-┌──────────────────────────────────────────────────────────────┐
-│                     WeFlow (Windows GUI)                      │
+┌──────────────┴──────────────────────────────────────────────┐
+│          WeFlow (微信 :5031)    │   QCE+NapCat (QQ :3001)    │
 │  ├─ 读取 WeChat 数据库 (message_0.db, message_1.db)          │
 │  ├─ HTTP API on 127.0.0.1:5031                              │
 │  ├─ /api/v1/sessions → 会话列表                              │
@@ -110,13 +110,13 @@ E:\chatmemory\
 ## 数据流
 
 ```
-WeChat App (运行中)
+WeChat App / QQ App (运行中)
     │
     ▼
-WeFlow.exe (后台 GUI)
-    │ HTTP API :5031 (Bearer token)
+WeFlow.exe / QCE (后台 GUI)
+    │ HTTP API :5031 / OneBot :3001
     ▼
-wechat_export.py ──→ cache/raw_exports/{群名}/{群名}_{ts}.txt
+wechat_export.py / qq_export.py ──→ cache/raw_exports/{群名}/{群名}_{ts}.txt
     │
     ▼
 chat_cleaner.py (config_loader.py ← config.json)
